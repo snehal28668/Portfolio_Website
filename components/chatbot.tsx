@@ -42,7 +42,7 @@ export default function ChatBot({ isOpen, onToggle }: ChatbotProps) {
       sender: "user",
     }
 
-    setMessages((prev: Message[]) => [...prev, userMessage])
+    setMessages((prev) => [...prev, userMessage])
     setInput("")
 
     // Simulate bot response
@@ -52,7 +52,7 @@ export default function ChatBot({ isOpen, onToggle }: ChatbotProps) {
         text: "Great question! Snehal has extensive experience with React, Next.js, and AI/ML. Would you like to know more about a specific project?",
         sender: "bot",
       }
-      setMessages((prev: Message[]) => [...prev, botMessage])
+      setMessages((prev) => [...prev, botMessage])
     }, 500)
   }
 
@@ -61,7 +61,7 @@ export default function ChatBot({ isOpen, onToggle }: ChatbotProps) {
       {/* Chat Button */}
       <button
         onClick={onToggle}
-        className={`fixed bottom-8 right-8 p-4 rounded-full bg-linear-to-r from-primary to-accent text-primary-foreground z-30 neon-glow-hover transition-all hover:shadow-lg ${
+        className={`fixed bottom-8 right-8 p-4 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground z-30 neon-glow-hover transition-all hover:shadow-lg ${
           isOpen ? "hidden" : "flex items-center justify-center"
         }`}
       >
@@ -84,7 +84,7 @@ export default function ChatBot({ isOpen, onToggle }: ChatbotProps) {
 
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
-            {messages.map((message: Message) => (
+            {messages.map((message) => (
               <div key={message.id} className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}>
                 <div
                   className={`max-w-xs px-4 py-2 rounded-lg ${
@@ -105,8 +105,8 @@ export default function ChatBot({ isOpen, onToggle }: ChatbotProps) {
             <input
               type="text"
               value={input}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setInput(e.target.value)}
-              onKeyPress={(e: React.KeyboardEvent<HTMLInputElement>) => e.key === "Enter" && handleSend()}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyPress={(e) => e.key === "Enter" && handleSend()}
               placeholder="Ask something..."
               className="flex-1 px-3 py-2 bg-card border border-primary/20 rounded-lg text-sm focus:outline-none focus:border-primary transition-colors"
             />
