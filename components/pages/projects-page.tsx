@@ -87,7 +87,7 @@ export default function ProjectsPage() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {loading && projects.length === 0 && !error && (
             <p className="text-muted-foreground">Loading your GitHub projects...</p>
           )}
@@ -145,7 +145,7 @@ export default function ProjectsPage() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg hover:shadow-lg transition-all duration-200"
+                    className="flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium bg-linear-to-r from-primary to-accent text-primary-foreground rounded-lg hover:shadow-lg transition-all duration-200"
                   >
                     <ExternalLink size={16} />
                     Live Demo

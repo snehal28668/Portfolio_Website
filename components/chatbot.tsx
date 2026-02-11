@@ -61,7 +61,7 @@ export default function ChatBot({ isOpen, onToggle }: ChatbotProps) {
       {/* Chat Button */}
       <button
         onClick={onToggle}
-        className={`fixed bottom-8 right-8 p-4 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground z-30 neon-glow-hover transition-all hover:shadow-lg ${
+        className={`fixed bottom-8 right-8 p-4 rounded-full bg-linear-to-r from-primary to-accent text-primary-foreground z-30 neon-glow-hover transition-all hover:shadow-lg ${
           isOpen ? "hidden" : "flex items-center justify-center"
         }`}
       >

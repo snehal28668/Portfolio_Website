@@ -59,11 +59,11 @@ export default function AboutPage() {
               style={{ animationDelay: `${0.5 + index * 0.1}s` }}
             >
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-sm font-bold">
+                <div className="w-12 h-12 rounded-full bg-linear-to-br from-primary to-accent flex items-center justify-center text-sm font-bold">
                   {event.year}
                 </div>
                 {index < timelineEvents.length - 1 && (
-                  <div className="w-1 h-16 bg-gradient-to-b from-primary to-transparent"></div>
+                  <div className="w-1 h-16 bg-linear-to-b from-primary to-transparent"></div>
                 )}
               </div>
               <div className="pt-2">

@@ -56,7 +56,7 @@ export default function SkillsPage() {
               </div>
               <div className="w-full h-3 bg-card rounded-full overflow-hidden border border-primary/20">
                 <div
-                  className="h-full bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-500"
+                  className="h-full bg-linear-to-r from-primary to-accent rounded-full transition-all duration-500"
                   style={{ width: `${skill.level}%` }}
                 ></div>
               </div>
