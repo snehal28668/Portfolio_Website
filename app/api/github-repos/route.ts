@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server"
 
-const USERNAME = process.env.GITHUB_USERNAME || process.env.NEXT_PUBLIC_GITHUB_USERNAME
+const DEFAULT_USERNAME = "snehal28668"
+const USERNAME =
+  process.env.GITHUB_USERNAME || process.env.NEXT_PUBLIC_GITHUB_USERNAME || DEFAULT_USERNAME
 const TOKEN = process.env.GITHUB_TOKEN
 const EXCLUDED_REPOS = new Set([
   "mind",

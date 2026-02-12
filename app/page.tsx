@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Sidebar from "@/components/sidebar"
 import Navbar from "@/components/navbar"
 import PageLoader from "@/components/page-loader"
 import HomePage from "@/components/pages/home-page"
@@ -59,21 +58,16 @@ export default function Home() {
   if (!mounted) return null
 
   return (
-    <div className="flex">
-      <Sidebar activeSection={activeSection} onNavigate={handleNavigate} />
-
-      <div className="flex-1 lg:ml-72">
-        <div className="fixed top-0 w-full z-50">
-          <Navbar
-            activeSection={activeSection}
-            onNavigate={handleNavigate}
-            isDarkMode={isDarkMode}
-            onThemeToggle={() => setIsDarkMode(!isDarkMode)}
-          />
-        </div>
-        <main className="pt-20 md:pt-24 px-4 md:px-8 min-h-screen">{renderPage()}</main>
+    <div className="flex min-h-screen flex-col">
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <Navbar
+          activeSection={activeSection}
+          onNavigate={handleNavigate}
+          isDarkMode={isDarkMode}
+          onThemeToggle={() => setIsDarkMode(!isDarkMode)}
+        />
       </div>
-
+      <main className="flex-1 pt-20 md:pt-24 px-4 md:px-8">{renderPage()}</main>
       <PageLoader isLoading={isLoading} />
     </div>
   )
